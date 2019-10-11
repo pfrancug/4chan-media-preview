@@ -1,7 +1,7 @@
 {
-    "name": "4chan image preview",
+    "name": "4chan media preview",
     "version": "1.0",
-    "description": "Preview image from post on hover.",
+    "description": "Preview media from post on hover.",
     "permissions": [
         "*://boards.4chan.org/*",
         "*://boards.4channel.org/*"
