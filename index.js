@@ -2,19 +2,16 @@ const showPreview = (link) => {
     const previewEl = document.createElement('div')
     previewEl.setAttribute('id', 'preview')
 
-    if (link.endsWith('.webm')) {
-        console.log(link)
-        const videoEl = document.createElement('video')
-        videoEl.setAttribute('src', link)
-        videoEl.setAttribute('autoplay', true)
-        videoEl.setAttribute('loop', true)
-        previewEl.appendChild(videoEl)
-    } else {
-        const imgEl = document.createElement('img')
-        imgEl.setAttribute('src', link)
-        previewEl.appendChild(imgEl)
+    const webm = link.endsWith('.webm')
+    const mediaEl = document.createElement(webm ? 'video' : 'img')
+    mediaEl.setAttribute('src', link)
+
+    if (webm) {
+        mediaEl.setAttribute('autoplay', true)
+        mediaEl.setAttribute('loop', true)
     }
 
+    previewEl.appendChild(mediaEl)
     document.querySelector('body').appendChild(previewEl)
 }
 
@@ -25,7 +22,7 @@ const hidePreview = () => {
 
 const images = document.querySelectorAll('.fileThumb')
 
-images.forEach((image) => {
+images.forEach(image => {
     image.addEventListener('mouseover', (e) => {
         const anchor = e.target.closest('a').getAttribute('href')
         const link = anchor.replace(/^/, 'http:')
