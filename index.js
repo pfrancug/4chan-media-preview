@@ -20,13 +20,13 @@ const hidePreview = () => {
     elements.forEach(element => element.parentNode.removeChild(element))
 }
 
-const images = document.querySelectorAll('.fileThumb')
-
-images.forEach(image => {
-    image.addEventListener('mouseover', (e) => {
+const thumbs = document.querySelectorAll('.fileThumb')
+thumbs.forEach(thumb => {
+    const img = thumb.querySelector(':scope > img')
+    img.addEventListener('mouseover', (e) => {
         const anchor = e.target.closest('a').getAttribute('href')
         const link = anchor.replace(/^/, 'http:')
         showPreview(link)
     })
-    image.addEventListener('mouseout', () => hidePreview())
+    img.addEventListener('mouseout', () => hidePreview())
 })
