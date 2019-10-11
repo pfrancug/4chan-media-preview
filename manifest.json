@@ -12,6 +12,9 @@
                 "*://boards.4chan.org/*",
                 "*://boards.4channel.org/*"
             ],
+            "css": [
+                "styles/styles.scss"
+            ],
             "js": [
                 "index.js"
             ]
