@@ -1,0 +1,28 @@
+{
+    "name": "4chan image preview",
+    "version": "1.0",
+    "description": "Preview image from post on hover.",
+    "permissions": [
+        "*://boards.4chan.org/*",
+        "*://boards.4channel.org/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://boards.4chan.org/*",
+                "*://boards.4channel.org/*"
+            ],
+            "js": [
+                "index.js"
+            ]
+        }
+    ],
+    "page_action": {
+        "default_icon": {
+            "16": "img/clover16.png",
+            "32": "img/clover32.png",
+            "192": "img/clover192.png"
+        }
+    },
+    "manifest_version": 2
+}
