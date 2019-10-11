@@ -4,11 +4,11 @@ const showPreview = (link) => {
 
     const webm = link.endsWith('.webm')
     const mediaEl = document.createElement(webm ? 'video' : 'img')
-    mediaEl.setAttribute('src', link)
+    mediaEl.src = link
 
     if (webm) {
-        mediaEl.setAttribute('autoplay', true)
-        mediaEl.setAttribute('loop', true)
+        mediaEl.autoplay = true
+        mediaEl.loop = true
     }
 
     previewEl.appendChild(mediaEl)
